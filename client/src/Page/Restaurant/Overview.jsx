@@ -48,7 +48,7 @@ const Overview = () => {
                      <MenuCollection
                       menuTitle="Menu"
                        pages="3" 
-                     image="https://binaries.templates.cdn.office.net/support/templates/en-us/lt89609043_quantized.png"/>
+                     image="https://b.zmtcdn.com/data/menus/596/19599596/7f7fb15d0dafc17348de910eb6ee2d36.jpg"/>
                  </div>
                  <h4 className="text-lg font-medium my-4">Cuisines</h4>
                  <div classNam="flex flex-wrap gap-2">
@@ -128,3 +128,4 @@ const Overview = () => {
 }
 
 export default Overview;
+// "https://binaries.templates.cdn.office.net/support/templates/en-us/lt89609043_quantized.png"
