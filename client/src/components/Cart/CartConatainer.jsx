@@ -52,6 +52,7 @@ const CartConatainer = () => {
     const toggleCart =()=> setIsOpen((prev)=> !prev);
     return (
         <>
+        <div className="fixed w-full bg-white z-10 p-2 bottom-2 p-10 border-2 border"></div>
         <div className="fixed w-full bg-white z-10 p-2 bottom-0">
         <CartSM toggle ={toggleCart}/>
         <CartLg toggle ={toggleCart}/>
