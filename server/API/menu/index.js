@@ -36,7 +36,7 @@ Method    GET
 */
 Router.get("/image/:_id", async (req, res) => {
   try {
-    //   await ValidateId(req.params);
+      // await ValidateId(req.params);
     const { _id } = req.params;
     const menus = await ImageModel.findOne(_id);
 
