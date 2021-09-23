@@ -15,11 +15,27 @@ const Router = express.Router();
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
+/*
+Route     /
+Des       Get Image details  
+Params    id
+Access    Public
+Method    GET
+*/
+Router.get("/:_id", async(req,res)=>{
+  try {
+    const image = await ImageModel.findById(req.params._id);
+    return res.json({image});
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+})
+
 
 /*
 Route     /
 Des       upload given image to S3 bucket and return saves file link to mongodb   
-Params    id
+Params    none
 Access    Public
 Method    POST
 */
@@ -30,7 +46,7 @@ Router.post("/", upload.single("file"), async (req, res) => {
   
     // s3 bucket options 
     const bucketOptions={
-      Bucket: "zomatoproject221",
+      Bucket: "shapeaijunebatch123",
         Key: file.originalname,
         Body: file.buffer,
         ContentType: file.mimetype,

@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import { useSelector } from "react-redux";
 
 
 // components
@@ -7,47 +8,16 @@ import Brand from "./Brand";
 import RestaurantCard from "../RestaurantCard";
 
 const Delivery= () => {
-    const [restaurantList,setRestaurantList] =useState([
-        {
-            _id:"123456",
-            photos:["https://b.zmtcdn.com/data/pictures/6/19503146/a463a0cd7251f8402c8024d3af3f7c33_o2_featured_v2.jpg?output-format=webp"
-        ],
-        name:"French Fries",
-        cuisine:["French Food","Coffee","Beverages"],
-        averageCost:100,
-        isPro:true,
-        isOff:80,
-        durationOfdelivery:47,
-        restaurantReviewValue:4.1,
+  
+    const [restaurantList,setRestaurantList] = useState([]);
 
-        },
-        {
-            _id:"123456-3",
-            photos:["https://b.zmtcdn.com/data/pictures/6/19503146/a463a0cd7251f8402c8024d3af3f7c33_o2_featured_v2.jpg?output-format=webp"
-        ],
-        name:"French Fries",
-        cuisine:["French Food","Coffee","Beverages"],
-        averageCost:100,
-        isPro:true,
-        isOff:80,
-        durationOfdelivery:47,
-        restaurantReviewValue:4.1,
+    const reduxState = useSelector(
+      (globalStore) => globalStore.restaurant.restaurants
+    );
+  useEffect(() => {
+    reduxState.restaurants&& setRestaurantList(reduxState.restaurants);
+  }, [reduxState.restaurants]);
 
-        },
-        {
-            _id:"123456-2",
-            photos:["https://b.zmtcdn.com/data/pictures/chains/8/18489118/a39228f63559b763c6928e91fbdf4942_o2_featured_v2.jpg?output-format=webp"
-        ],
-        name:"Punjabi Nawabi",
-        cuisine:["North Indian", "Biryani", "Mughlai, Chinese"],
-        averageCost:100,
-        isPro:true,
-        isOff:80,
-        durationOfdelivery:47,
-        restaurantReviewValue:4.1,
-
-        },
-    ]);
     return (
         <>
           <DeliveryCarousal />
@@ -68,3 +38,6 @@ const Delivery= () => {
       );
     };
 export default Delivery;
+
+
+
