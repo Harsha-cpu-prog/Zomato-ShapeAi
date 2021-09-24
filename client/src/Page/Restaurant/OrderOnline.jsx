@@ -1,6 +1,5 @@
 import React ,{useState , useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
-
 import { AiOutlineCompass } from "react-icons/ai";
 import { BiTimeFive } from "react-icons/bi";
 
@@ -28,14 +27,16 @@ const OrderOnline = () => {
         (globalStore) => globalStore.restaurant.selectedRestaurant.restaurant
       );
       const dispatch = useDispatch();
-
+      console.log({reduxState});
       useEffect(() => {
         reduxState &&
           dispatch(getFoodList(reduxState.menu)).then((data) =>
-            setMenu(data.payload.menus.menus)
-          
+            {setMenu(data.payload.menus.menus)
+             console.log({menu});
+            }
           );
       }, [reduxState]);
+      
     
     
     

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // redux types
-import { GET_FOOD_LIST,GET_FOOD } from "./food.type";
+import { GET_FOOD_LIST , GET_FOOD } from "./food.type";
 
 export const getFood = (foodId)=> async(dispatch) =>{
 try {

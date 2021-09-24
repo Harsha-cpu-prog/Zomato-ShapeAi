@@ -19,6 +19,7 @@ import Image from "./API/Image";
 import Order from "./API/orders";
 import Reviews from "./API/Reviews";
 import User from "./API/User";
+import Menu from "./API/menu";
 // import Mail from "./API/Mail";
 
 // database connection
@@ -47,6 +48,7 @@ zomato.use("/image", Image);
 zomato.use("/order", Order);
 zomato.use("/reviews", Reviews);
 zomato.use ("/user", User);
+zomato.use("/menu", Menu );
 // zomato.use("/mail", MailService);
 
 
