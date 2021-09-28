@@ -6,11 +6,11 @@ import { BiTimeFive } from "react-icons/bi";
 // components
 import FloatMenuBtn from "../../components/restaurant/Order-Online/FloatMenuBtn";
 import MenuListContainer from "../../components/restaurant/Order-Online/MenuListContainer";
-// import FoodItem from "../../components/restaurant/Order-Online/FoodItem";
 import FoodList from "../../components/restaurant/Order-Online/FoodList";
 
 // redux actions
 import { getFoodList } from "../../Redux/Reducer/Food/food.action";
+import { addCart } from "../../Redux/Reducer/Cart/Cart.action";
 
 const OrderOnline = () => {
     const [menu, setMenu] = useState([]);
@@ -27,12 +27,12 @@ const OrderOnline = () => {
         (globalStore) => globalStore.restaurant.selectedRestaurant.restaurant
       );
       const dispatch = useDispatch();
-      console.log({reduxState});
+    
       useEffect(() => {
         reduxState &&
           dispatch(getFoodList(reduxState.menu)).then((data) =>
             {setMenu(data.payload.menus.menus)
-             console.log({menu});
+            
             }
           );
       }, [reduxState]);

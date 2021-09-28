@@ -3,8 +3,6 @@ import axios from "axios";
 // Redux types
 import { GET_REVIEW, POST_REVIEW } from "./reviews.type";
 
-// import { API_URL } from "../../../key";
-
 export const getReviews = (resId) => async (dispatch) => {
   try {
     const reviewList = await axios({
@@ -23,7 +21,7 @@ export const postReviews = (reviewData) => async (dispatch) => {
     await axios({
       method: "POST",
       url:` http://localhost:4000/reviews/new`,
-    //   data: { reviewData },
+      data: { reviewData },
     });
 
     return dispatch({

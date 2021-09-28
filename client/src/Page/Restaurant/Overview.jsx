@@ -1,12 +1,10 @@
 import React ,{useState , useEffect} from "react";
 import { Link,useParams } from "react-router-dom";
 import {IoMdArrowDropright} from "react-icons/io";
-import { MdContentCopy } from "react-icons/md";
-import { FaDirections } from "react-icons/fa";
 import Slider from "react-slick";
 import { useSelector ,useDispatch } from "react-redux";
 import ReactStars from "react-rating-stars-component";
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+// import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 // components
 import MenuCollection from "../../components/restaurant/MenuCollection";
@@ -23,16 +21,43 @@ const Overview = () => {
     const [Reviews, setReviewss] = useState([]);
   
     const {id} =useParams();
-      const settings = {
-          arrows :true,
-          infinite:true,
-          speed:500,  
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          nextArrow: <NextArrow/>,
-          prevArrow:<PrevArrow/>,
-      };
-
+    const settings = {
+      arrows :true,
+      infinite:true,
+      speed:500,  
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      nextArrow: <NextArrow/>,
+      prevArrow:<PrevArrow/>,
+  };
+      // responsive: [
+      //   {
+      //     breakpoint: 1024,
+      //     settings: {
+      //       slidesToShow: 3,
+      //       slidesToScroll: 3,
+      //       infinite: true,
+      //       dots: true,
+      //     },
+      //   },
+      //   {
+      //     breakpoint: 600,
+      //     settings: {
+      //       slidesToShow: 2,
+      //       slidesToScroll: 2,
+      //       initialSlide: 2,
+      //     },
+      //   },
+      //   {
+      //     breakpoint: 480,
+      //     settings: {
+      //       slidesToShow: 1,
+      //       slidesToScroll: 1,
+      //     },
+      //   },
+      // ],
+    // };
+  
       const reduxState = useSelector(
         (globalStore) => globalStore.restaurant.selectedRestaurant.restaurant
       );
