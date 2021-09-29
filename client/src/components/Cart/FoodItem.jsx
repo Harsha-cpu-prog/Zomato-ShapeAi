@@ -11,7 +11,7 @@ const FoodItem = (props) => {
   
   const decrement =() =>{
       if(props.quantity === 1) return;
-    dispatch (DecQty(props._id));
+    dispatch(DecQty(props._id));
 };
 
     return (
@@ -22,11 +22,13 @@ const FoodItem = (props) => {
                     <div className="flex flex-col items-end">
                     <small> ₹{parseInt(props.price) * parseInt(props.quantity)}</small>
                    <div className=" px-1 bg-zomato-400 text-white rounded flex items-center gap-1" >
-                   <button onClick={decrement} className="p-1 bg-zomato-400 text-white rounded">
+                   <button onClick={decrement}
+                    className="p-1 bg-zomato-400 text-white rounded">
                        -
                        </button>
                    <small >{props.quantity} </small>
-                   <button onClick={increment} className="p-1 bg-zomato-400 text-white rounded">
+                   <button onClick={increment} 
+                    className="p-1 bg-zomato-400 text-white rounded">
                        +
                        </button>
                    </div>
