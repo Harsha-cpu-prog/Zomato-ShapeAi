@@ -44,6 +44,7 @@ export const addCart = (newFood) => async (dispatch) => {
   }
 };
 export const DeleteCart = (foodID) => async (dispatch) => {
+  console.log({foodID});
   try {
     let cartData =   { cart: [] };
 
@@ -75,9 +76,7 @@ export const IncQty = (foodID) => async (dispatch) => {
       const {cart} = JSON.parse(localStorage.getItem("zomatoCart"));
       cartData.cart = cart ;
       
-    }
-
-    
+    }    
     cartData.cart = cartData.cart.map((food) =>
     food.id === foodID 
     ?  {...food,
@@ -103,15 +102,14 @@ export const DecQty = (foodID) => async (dispatch) => {
       cartData.cart = cart ;
     
     }
-
-    
     cartData.cart = cartData.cart.map((food) =>
     food.id === foodID 
     ? {
       ...food, 
       quantity : food.quantity - 1 ,
        totalPrice: food.price * (food.quantity - 1),
-       }:food
+       }
+       :food
     );
 
     localStorage.setItem("zomatoCart",JSON.stringify({cart:cartData.cart}));

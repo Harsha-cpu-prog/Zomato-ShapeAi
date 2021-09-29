@@ -25,6 +25,7 @@
     "passport-google-oauth20": "^2.0.0",
     "passport-jwt": "^4.0.0"
   },
+  
   "devDependencies": {
     "@babel/cli": "^7.15.4",
     "@babel/core": "^7.15.5",
