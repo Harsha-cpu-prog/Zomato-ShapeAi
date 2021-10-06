@@ -14,7 +14,7 @@ import { addCart } from "../../Redux/Reducer/Cart/Cart.action";
 
 const OrderOnline = () => {
     const [menu, setMenu] = useState([]);
-    const [selected, setSelected ] = useState("");
+    const [selected, setSelected ] = useState("")
 
     const onClickHandler = (e) => {
       if (e.target.id){
@@ -23,22 +23,19 @@ const OrderOnline = () => {
         return;
   };
 
+  const dispatch = useDispatch();
     const reduxState = useSelector(
         (globalStore) => globalStore.restaurant.selectedRestaurant.restaurant
       );
-      const dispatch = useDispatch();
-    
+      console.log({reduxState});
+
       useEffect(() => {
         reduxState &&
           dispatch(getFoodList(reduxState.menu)).then((data) =>
-            {setMenu(data.payload.menus.menus)
-            
-            }
+          setMenu(data.payload.menus.menus)
           );
       }, [reduxState]);
       
-    
-    
     
     return (
         <>
@@ -48,13 +45,12 @@ const OrderOnline = () => {
                menu.map((item)=>(
                  <MenuListContainer 
                  {...item}
-                  key={item._id} 
+                  key={item. _id} 
                  onClickHandler={onClickHandler} 
                  selected={selected}
                    /> 
                ))
              }
-             
               </aside>
 
               <div className="w-full px-3 md:w-3/4">
@@ -65,8 +61,8 @@ const OrderOnline = () => {
                   </h4>
                   </div>
                   <section className="flex  h-screen overflow-y-scroll flex-col gap-3 md:gap-5">
-                  {menu.map((item) => (
-           <FoodList key={item._id} {...item} />
+                  { menu.map( (item) => (
+           <FoodList key= {item._id} {...item} />
                   ))}
                 
                   </section>

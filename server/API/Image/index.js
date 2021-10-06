@@ -46,14 +46,15 @@ Router.post("/", upload.single("file"), async (req, res) => {
   
     // s3 bucket options 
     const bucketOptions={
-      Bucket: "shapeaijunebatch123",
+      Bucket: "zomatoproject221",
         Key: file.originalname,
         Body: file.buffer,
         ContentType: file.mimetype,
         ACL: "public-read", // Access Control List
       };
-
+      
       const uploadImage = await s3Upload(bucketOptions);
+      await ImageModel.create({images :[ { location: uploadImage.Location } ]});
   
       return res.status(200).json({ uploadImage });
     } catch (error) {

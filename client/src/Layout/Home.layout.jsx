@@ -10,6 +10,7 @@ import { getCart } from "../Redux/Reducer/Cart/Cart.action";
 
 const HomeLayout =(props) =>{
   const dispatch = useDispatch();
+  
     useEffect(()=>{
         dispatch (getCart());
     },[]);

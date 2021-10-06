@@ -17,7 +17,6 @@ const Master = () => {
       {type === "nutri" && <Nutrition/>}
   
   </div>
-     
   )
 };
 

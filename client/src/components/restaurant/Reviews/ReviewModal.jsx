@@ -23,7 +23,7 @@ export default function ReviewModal({isOpen,setIsOpen,...props}) {
     setReviewData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
 
   function closeModal() {
-    setIsOpen(false)
+    setIsOpen(false);
   }
   const handleRating = (rating) =>
   setReviewData((prev) => ({ ...prev, rating })); 
@@ -32,7 +32,7 @@ export default function ReviewModal({isOpen,setIsOpen,...props}) {
   setReviewData((prev) => ({
     ...prev,
     isRestaurantReview: !reviewData.isRestaurantReview,
-    isRestaurantReview:false,
+    isFoodReview:false,
     
   }));
   const toggleDelivery = () =>

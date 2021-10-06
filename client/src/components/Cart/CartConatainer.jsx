@@ -31,7 +31,8 @@ const CartSM =({toggle}) =>{
                              <sub>(plus tax)</sub>
                     </h4>
                </div> 
-               <button onClick={ continuetoCheckout}
+               <button
+                onClick={ continuetoCheckout}
                 className="flex items-center gap-1 bg-zomato-400 px-3 py-1 text-white rounded-lg">
                    Continue <IoMdArrowDropright/>
                </button>
@@ -47,7 +48,7 @@ const CartLg =({toggle}) =>{
 
     const continuetoCheckout = () => history.push("/checkout/orders");
     return (<>
-      <div className="  hidden  md:flex items-center justify-between container px-20 mx-auto ">
+      <div className="hidden  md:flex items-center justify-between container px-20 mx-auto ">
       <div className="flex gap-2 text-xl items-start">
                <span className="border bg-white border-gray-300 p-1 rounded" onClick={toggle}>
                   <IoMdArrowDropup/>
@@ -107,11 +108,11 @@ const CartConatainer = () => {
         <CartSM toggle ={toggleCart}/>
         <CartLg toggle ={toggleCart}/>
         </div>
-                  </>
-        )}
         </>
-    )
-}
+       )}
+        </>
+    );
+};
 
 export default CartConatainer;
 

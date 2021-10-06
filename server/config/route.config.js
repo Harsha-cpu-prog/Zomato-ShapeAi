@@ -3,8 +3,6 @@ import JwtPassport from "passport-jwt";
 // database modal
 import { UserModel } from "../database/user";
 
-
-
 const JWTStratergy = JwtPassport.Strategy;
 const ExtractJwt = JwtPassport.ExtractJwt;
 

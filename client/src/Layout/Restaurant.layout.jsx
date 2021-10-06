@@ -29,7 +29,7 @@ const RestaurantLayout = (props) => {
     });
     const { id } = useParams();
     const dispatch = useDispatch();
-
+   
     useEffect(() => {
         dispatch(getSpecificRestaurant(id)).then((data) => {
           setRestaurant((prev) => ({
@@ -37,8 +37,10 @@ const RestaurantLayout = (props) => {
             ...data.payload.restaurant,
           }));
     
-          dispatch(getImage(data.payload.restaurant.photos)).then((data) =>
-            setRestaurant((prev) => ({ ...prev, ...data.payload.image }))
+          dispatch(getImage(data.payload.restaurant.photos)).then((data) =>{
+           
+            setRestaurant((prev) => ({ ...prev, ...data.payload.image}))
+          }
           );
         });
     dispatch(getCart());
@@ -49,20 +51,8 @@ const RestaurantLayout = (props) => {
         <>
         <RestaurantNavbar/>
         <div className=" container mx-auto px-4 lg:px-20 pb-10">
-            <ImageGrid images={restaurant.images}
-              
-        
-                
+            <ImageGrid images={restaurant} />
 
-
-    //  [ "https://b.zmtcdn.com/data/pictures/6/19629626/0f5801ef6a3ecd312a2800df68572784.jpg?fit=around|771.75:416.25&crop=771.75:416.25;*,*",
-    //   "https://b.zmtcdn.com/data/pictures/6/19629626/0f5801ef6a3ecd312a2800df68572784.jpg?fit=around|771.75:416.25&crop=771.75:416.25;*,*",
-    //   "https://b.zmtcdn.com/data/pictures/6/19629626/0f5801ef6a3ecd312a2800df68572784.jpg?fit=around|771.75:416.25&crop=771.75:416.25;*,*",
-    //   "https://b.zmtcdn.com/data/pictures/6/19629626/0f5801ef6a3ecd312a2800df68572784.jpg?fit=around|771.75:416.25&crop=771.75:416.25;*,*",
-    //   "https://b.zmtcdn.com/data/pictures/6/19629626/0f5801ef6a3ecd312a2800df68572784.jpg?fit=around|771.75:416.25&crop=771.75:416.25;*,*",
-    //     ]
-    
-        />
         <RestaurantInfo 
         name ={restaurant?.name}
         restaurantRating ={restaurant?.rating || 0}
@@ -85,9 +75,7 @@ const RestaurantLayout = (props) => {
            </InfoButtons>
         </div>
     <div className="my-10">
-        
         <TabContainer>
-            
         </TabContainer>
         </div>
       <div className="relative">  {props.children}</div>

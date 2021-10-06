@@ -18,7 +18,7 @@ const FoodItem = (props) => {
             dispatch(getImage(data.payload.foods.photos)).then((data) => {
               const { images } = data.payload.image;
               images.length &&
-                setFood((prev) => ({ ...prev, image: images[0].location }));
+                setFood((prev) => ({ ...prev, image:images[0].location }));
             });
           });
         }, []);

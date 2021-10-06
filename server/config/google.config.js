@@ -1,4 +1,5 @@
 import googleOAuth from "passport-google-oauth20";
+
 import { UserModel } from "../database/allModels";
 
 const GoogleStrategy =googleOAuth.Strategy;
@@ -18,7 +19,7 @@ export default (passport) => {
                 profilePic: profile.photos[0].value,
             };
             try{
-                const user = await UserModel.findOne({ email: newUser.email });
+                const user = await UserModel.findOne({ email:newUser.email });
                 
                 if(user){
                     const token = user.generateJwtToken();

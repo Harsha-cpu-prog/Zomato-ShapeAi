@@ -8,7 +8,7 @@ import FoodItem from '../components/Cart/FoodItem';
 import AddressList from '../components/Checkout/AddressList';
 
 // redux action 
-import { createOrder } from '../Redux/Reducer/Order/order.action';
+import {createOrder} from '../Redux/Reducer/Order/order.action';
 
 const Checkout = () => {
     const reduxStateCart = useSelector((global) => global.cart.cart);
@@ -43,10 +43,10 @@ const payNow = () => {
       handler: () => {
         alert("Payment Done");
       },
-    //   prefill: {
-    //     name: reduxStateUser.fullname,
-    //     email: reduxStateUser.email,
-    //   },
+      // prefill: {
+      //   name: reduxStateUser.fullname,
+      //   email: reduxStateUser.email,
+      // },
       theme: { color: "#e23744" },
     };
 
@@ -64,7 +64,7 @@ const payNow = () => {
                <h5 className="text-base tracking-wider">ORDER FROM</h5> 
                <div className="flex  w-full flex-col items-center text-gray-400">
                <h4> Domino's Pizza</h4>
-                   <small> GT World Mall, Magadi Road, Bangalore</small>
+                   <small> GT World Mall, Magadi Road, Bangaluru</small>
                      </div>
                      <div className="my-4 px-4 flex flex-col gap-2 w-full md:w-3/5  ">
                      {reduxStateCart.map((food) => (

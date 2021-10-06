@@ -9,11 +9,12 @@ import { getMyself ,clearUser } from "../User/user.action";
 export const signIn = (userData) => async (dispatch) => {
   try {
     const User = await axios({
-      method: "POST",
+      method: "POST",  
       url: `http://localhost:4000/auth/signin`,
       data: { credentials: userData },
     });
     getMyself();
+    
     localStorage.setItem(
       "zomatoUser",
       JSON.stringify({ token: User.data.token })

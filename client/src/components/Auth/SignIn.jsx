@@ -23,8 +23,9 @@ const submit =() =>{
   email: "",
   password: "",
 });
-  dispatch(signIn(userData));
+dispatch(signIn(userData));
 };
+
 const googlesignin = () =>
 (window.location.href = "http://localhost:4000/auth/google");
 
@@ -72,7 +73,9 @@ const googlesignin = () =>
                 >
                 </Dialog.Title>
                 <div className="mt-2 flex flex-col gap-3 w-full">
-                 <button onClick={googlesignin} className=" py-2 justify-center rounded-lg flex items-center gap-2 w-full border border-gray-400 bg-white text-gray-700 hover:bg-gray-100">
+                 <button
+                  onClick={googlesignin}
+                   className=" py-2 justify-center rounded-lg flex items-center gap-2 w-full border border-gray-400 bg-white text-gray-700 hover:bg-gray-100">
                      Signin With Google <FcGoogle/>
                      </button>  
                      <form  className="flex flex-col gap-3">
@@ -100,7 +103,8 @@ const googlesignin = () =>
                   />
                 </div>
                 <div onClick={submit} 
-                 className="w-full text-center  bg-zomato-400 text-white py-2 rounded-lg">  Sign In  </div>
+                 className="w-full text-center  bg-zomato-400 text-white py-2 rounded-lg"> 
+                  Sign In  </div>
                      </form>
                 </div>
               </div>

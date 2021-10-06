@@ -25,10 +25,10 @@ setUserData({
   email: "",
   password: "",
   fullname: "",
-})
-console.log()
+});
 dispatch(signUp(userData));
 };
+
 const googlesignin = () =>
 (window.location.href = "http://localhost:4000/auth/google");
 
@@ -79,7 +79,9 @@ const googlesignin = () =>
             
                 </Dialog.Title>
                 <div className="mt-2 flex flex-col gap-3 w-full">
-                 <button onClick={googlesignin} className=" py-2 justify-center rounded-lg flex items-center gap-2 w-full border border-gray-400 bg-white text-gray-700 hover:bg-gray-100">
+                 <button 
+                 onClick={googlesignin} 
+                 className=" py-2 justify-center rounded-lg flex items-center gap-2 w-full border border-gray-400 bg-white text-gray-700 hover:bg-gray-100">
                      Sign up  With Google <FcGoogle/>
                      </button>  
                      <form  className="flex flex-col gap-3">
@@ -108,7 +110,9 @@ const googlesignin = () =>
                
                 <div className="w-full flex flex-col gap-2">
                   <label htmlFor="password">Password</label>
-                  <input type="password" id="password" 
+                  <input
+                   type="password" 
+                  id="password" 
                   value={userData.password}
                    onChange={handleChange}
                   placeholder="*********"
@@ -117,7 +121,8 @@ const googlesignin = () =>
                 </div>
                 <div 
                 onClick={submit}
-                 className="w-full text-center  bg-zomato-400 text-white py-2 rounded-lg">  Sign up </div>
+                 className="w-full text-center  bg-zomato-400 text-white py-2 rounded-lg">
+                     Sign up </div>
                      </form>
                 </div>
               </div>

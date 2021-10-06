@@ -30,7 +30,8 @@ const Reviews = () => {
         <>
            <div className="w-full flex flex-col md:flex-row relative">
            <div className=" w-full md:8/12 flex flex-col gap-3">
-          <div className="md:hidden"> <AddReviewCard/></div>
+          <div className="md:hidden">
+             <AddReviewCard/></div>
              { reviews.map((review) =>(
                   <ReviewCard{...review}/>
                ))} 

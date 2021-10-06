@@ -11,8 +11,10 @@ import order from "./Order/order.reducer";
 
 const rootReducer = combineReducers
 ({ restaurant , image , reviews , user , food, cart, order});
-
 export default rootReducer;
+
+
+
 
 
 

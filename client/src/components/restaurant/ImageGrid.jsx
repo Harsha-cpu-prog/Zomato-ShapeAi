@@ -6,7 +6,7 @@ const ImageGrid = (props) => {
         <>
             <div className="w-full h-60  md:hidden">
                 <img 
-                src ={props.images.length && props.images[0].location}
+                src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp2nZcKampuy3V4aGyXWPsTp2B9oW30IAPNA&usqp=CAU"
                 alt="restaurant image"
                 className="w-full h-full object-cover rounded-lg"
                 />
@@ -14,19 +14,19 @@ const ImageGrid = (props) => {
              <div className="hidden w-full  h-96 md:flex gap-1 overflow-hidden">
                  <div className="w-full h-full overflow-hidden">
                      <img 
-                     src= {props.images.length && props.images[0].location}
+                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp2nZcKampuy3V4aGyXWPsTp2B9oW30IAPNA&usqp=CAU"
                      alt="restaurant image"
                       className="w-full h-full object-cover rounded-lg transform transition duration-700  hover:scale-110"
                      />
                  </div>
                  <div className="w-1/4 h-full flex flex-col gap-1 ovrflow-hidden">
                      <img 
-                     src= {props.images.length >=1 && props.images[1].location}
+                     src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp2nZcKampuy3V4aGyXWPsTp2B9oW30IAPNA&usqp=CAU"
                      alt="restaurant image"
                       className="w-full h-2/4 object-cover rounded-lg transform transition duration-700  hover:scale-110"
                      />
                      <img 
-                     src= {props.images.length >=2 && props.images[2].location}
+                     src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp2nZcKampuy3V4aGyXWPsTp2B9oW30IAPNA&usqp=CAU"
                      alt="restaurant image"
                       className="w-full h-2/4 object-cover rounded-lg transform transition duration-700  hover:scale-110"
                      />
@@ -34,7 +34,7 @@ const ImageGrid = (props) => {
                  <div className="w-1/4 h-full flex flex-col gap-2 overflow-hidden">
                      <div className="w-full h-2/4 relative ">
                      <img 
-                     src= {props.images.length >=3 && props.images[3].location}
+                     src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp2nZcKampuy3V4aGyXWPsTp2B9oW30IAPNA&usqp=CAU"
                      alt="restaurant image"
                       className="w-full h-full object-cover rounded-lg "
                      />
@@ -45,7 +45,7 @@ const ImageGrid = (props) => {
                      </div>
                      <div className="w-full h-2/4 relative ">
                      <img 
-                     src= {props.images.length >=4 && props.images[4].location}
+                     src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp2nZcKampuy3V4aGyXWPsTp2B9oW30IAPNA&usqp=CAU"
                      alt="restaurant image"
                       className="w-full h-full object-cover rounded-lg "
                      />
@@ -66,3 +66,6 @@ const ImageGrid = (props) => {
 }
 
 export default ImageGrid;
+
+
+

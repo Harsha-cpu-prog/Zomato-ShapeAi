@@ -13,8 +13,8 @@ const RestaurantCard = (props) => {
       useEffect(() => {
         props.photos &&
           dispatch(getImage(props.photos)).then((data) => 
-            setImage(data.payload.image));
-          
+            setImage(data.payload.image)
+            );
       }, [props.photos]);
     
     return (
@@ -39,7 +39,7 @@ const RestaurantCard = (props) => {
                      </span>
                  </div>
                     <img 
-                    src = {image.images.length && image.images[0].location}
+                    src = {image?.images.length && image.images[0].location}
                     alt="food"
                     className="w-full h-full rounded-2xl "
                     />
