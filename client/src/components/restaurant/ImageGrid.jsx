@@ -6,7 +6,7 @@ const ImageGrid = (props) => {
         <>
             <div className="w-full h-60  md:hidden">
                 <img 
-                src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp2nZcKampuy3V4aGyXWPsTp2B9oW30IAPNA&usqp=CAU"
+                src ={props.images.length && props.images[0].location}
                 alt="restaurant image"
                 className="w-full h-full object-cover rounded-lg"
                 />
@@ -14,19 +14,19 @@ const ImageGrid = (props) => {
              <div className="hidden w-full  h-96 md:flex gap-1 overflow-hidden">
                  <div className="w-full h-full overflow-hidden">
                      <img 
-                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp2nZcKampuy3V4aGyXWPsTp2B9oW30IAPNA&usqp=CAU"
+                     src={props.images.length && props.images[0].location}
                      alt="restaurant image"
                       className="w-full h-full object-cover rounded-lg transform transition duration-700  hover:scale-110"
                      />
                  </div>
                  <div className="w-1/4 h-full flex flex-col gap-1 ovrflow-hidden">
                      <img 
-                     src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp2nZcKampuy3V4aGyXWPsTp2B9oW30IAPNA&usqp=CAU"
+                     src= {props.images.length && props.images[0]?.location}
                      alt="restaurant image"
                       className="w-full h-2/4 object-cover rounded-lg transform transition duration-700  hover:scale-110"
                      />
                      <img 
-                     src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp2nZcKampuy3V4aGyXWPsTp2B9oW30IAPNA&usqp=CAU"
+                     src= {props.images.length && props.images[0]?.location}
                      alt="restaurant image"
                       className="w-full h-2/4 object-cover rounded-lg transform transition duration-700  hover:scale-110"
                      />

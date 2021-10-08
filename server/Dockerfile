@@ -8,6 +8,8 @@ RUN npm i
 
 COPY . ./
 
+/..
+
 
 
 
