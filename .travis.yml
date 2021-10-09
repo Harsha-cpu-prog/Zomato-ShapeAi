@@ -25,7 +25,7 @@ after_success:
   deploy:
   # deploy to AWS EBS
   provider: elasticbeanstalk
-  region: ap-south-1
+  region: us-east-2
   app: Zomato-clone-shapeai
   env: Zomatocloneshapeai-env
   bucket_name: elasticbeanstalk-us-east-2-767491905585
