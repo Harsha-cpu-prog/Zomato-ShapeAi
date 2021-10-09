@@ -21,3 +21,17 @@ after_success:
   - docker push harshii/zomato-shapeai-client
   - docker push harshii/zomato-shapeai-server
   - docker push harshii/zomato-shapeai-nginx 
+
+  deploy:
+  # deploy to AWS EBS
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: Zomato-clone-shapeai
+  env: Zomatocloneshapeai-env
+  bucket_name: elasticbeanstalk-us-east-2-767491905585
+  bucket_path: zomatoshapeai
+  on: 
+    branch: master
+  access_key_id: $AWS_KEY
+  secret_access_key: $AWS_SECRET
+
